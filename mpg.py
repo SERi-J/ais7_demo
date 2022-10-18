@@ -61,9 +61,11 @@ st.pyplot(fig)
 pxh = px.histogram(data, x="origin", title="지역별 자동차 연비 데이터 수")
 st.plotly_chart(pxh)
 
-sw = sns.swarmplot(data=data,x="origin", marker="x")
-st.plotly_chart(sw)
-# st.plotly_chart(data, x="origin")
+fig, ax = plt.subplots(figsize=(10, 3))
+sns.swarmplot(data, x="origin", y="mpg", hue="mpg")
+# sns.swarmplot(data=data, x="origin", y="mpg", size=7).set_title("지역별 자동차 연비 데이터 수")
+st.pyplot(fig)
+
 
 # import streamlit as st
 # import pandas as pd
